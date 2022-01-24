@@ -3,8 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
-class CheckPassword
+class CheckAdminToken
 {
     /**
      * Handle an incoming request.
@@ -15,8 +16,12 @@ class CheckPassword
      */
     public function handle($request, Closure $next)
     {
-        if ($request -> api_password != env('API-Password' , 'ApiForLaravel1408')){
-        return response()->json(['Message:' => 'Unauthenticated']);
+        $user = null;
+        try {
+            $user = JWTAuth::parseToken()->authentication();
+
+        } catch (\Exception $e) {
+            throw $e;
         }
         return $next($request);
     }

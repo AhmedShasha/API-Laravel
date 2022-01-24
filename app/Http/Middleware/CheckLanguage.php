@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class CheckPassword
+class CheckLanguage
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,10 @@ class CheckPassword
      */
     public function handle($request, Closure $next)
     {
-        if ($request -> api_password != env('API-Password' , 'ApiForLaravel1408')){
-        return response()->json(['Message:' => 'Unauthenticated']);
-        }
+        app()->setlocale('ar');
+        if ($request->lang && $request->lang == 'en')
+            app()->setlocale('en');
+
         return $next($request);
     }
 }
