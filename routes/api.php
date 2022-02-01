@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\Admin\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,6 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['api', 'checkPassword', 'checkLanguage'], 'namespace' => 'Api'], function () {
     Route::post('GetCategories', 'CategoriesController@index');
     Route::post('getOneCategory', 'CategoriesController@getCategoryById');
+    Route::group(
+        ['namespace' => 'Admin'], function(){
+            Route::post('login','AuthController@login');
+        });
+
 });
 
 Route::group(['middleware' => ['api', 'checkPassword', 'checkLanguage', 'checkAdminToken:admin-api'], 'namespace' => 'Api'], function () {
