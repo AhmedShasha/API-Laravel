@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "54cd25bc-8d20-428b-ae75-1f9b82418768",
+		"name": "API-Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCategories",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_password",
+							"value": "ApiForLaravel1408",
+							"type": "default"
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/API-Laravel/public/api/GetCategories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API-Laravel",
+						"public",
+						"api",
+						"GetCategories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_password",
+							"value": "ApiForLaravel1408",
+							"type": "default"
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "ahmed@app.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/API-Laravel/public/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API-Laravel",
+						"public",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCategoryById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_password",
+							"value": "ApiForLaravel1408",
+							"type": "default"
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "default"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/API-Laravel/public/api/getOneCategory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API-Laravel",
+						"public",
+						"api",
+						"getOneCategory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
